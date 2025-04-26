@@ -32,6 +32,18 @@ then
 		--mind 0.05 --maf 0.01 --hwe 1e-8 --make-bed \
 		--out ${folder}/${gene} --force-intersect
 fi
+#####Estimate the heritability of the protein
+/WJH/data/UKB_PWAS_weight/fusion/plink/plink \
+	--allow-no-sex \
+	--bfile ${folder}/${gene} \
+	--make-grm-bin \
+	--out ${folder}/${gene}_grm
+
+/WJH/data/UKB_PWAS_weight/fusion/gcta_1.93.2beta/gcta64 \
+	--grm ${folder}/${gene}_grm \
+	--pheno ${folder}/${gene}_exp.txt \
+	--out ${folder}/${gene}_reml \
+	--reml --reml-no-constrain --reml-lrt 1 --thread-num 15
 
 #####Build the model using FUSION pipeline
 fusion_folder=/WJH/data/UKB_PWAS_weight/fusion/
@@ -45,5 +57,3 @@ Rscript ${fusion_folder}/FUSION.compute_weights.R \
 	--out /WJH/data/UKB_PWAS_weight/output/${gene} \
 	--models top1,lasso,enet --save_hsq --verbose 1 \
 	--covar /WJH/data/UKB_PWAS_weight/data/cov.txt
-
-
