@@ -41,7 +41,7 @@ palmo_obj <- annotateMetadata(data_object=palmo_obj,sample_column= "Sample",dono
 palmo_obj <- mergePALMOdata(data_object=palmo_obj, datatype="singlecell")
 palmo_obj <- avgExpCalc(data_object=palmo_obj,assay="RNA", group_column="celltype")
 #palmo_obj <- cvCalcSCProfile(data_object=palmo_obj,housekeeping_genes=c("GAPDH", "ACTB"),fileName="CVDsc-10")
-palmo_obj <- cvCalcSCProfile(data_object=palmo_obj, meanThreshold = 0.1,housekeeping_genes=c("GAPDH", "ACTB"),fileName="CVDsc-10_all")
+palmo_obj <- cvCalcSCProfile(data_object=palmo_obj, meanThreshold = 0.1,fileName="CVDsc-10_all")
 #cvSCsampleprofile(data_object=palmo_obj, meanThreshold = 0.1,cvThreshold = 10)
 featureSet <- c("PTID", "Time","celltype")
 palmo_obj <- lmeVariance(data_object=palmo_obj,featureSet=featureSet,meanThreshold=0.1, cl=4,fileName="CVDsc-10_all")
