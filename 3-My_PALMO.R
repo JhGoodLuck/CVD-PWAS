@@ -21,13 +21,12 @@ palmo_obj <- naFilter(data_object=palmo_obj, na_cutoff=0.4)
 featureSet <- c("PTID","Time")
 Genelmo_obj <- lmeVariance(data_object=palmo_obj, featureSet=featureSet,meanThreshold=1, fileName="CVDbulk_10")
 var_decomp <- palmo_obj@result$variance_decomposition
-#plots <- variancefeaturePlot(vardata=var_decomp, featureSet=featureSet,Residual=T)
 palmo_obj <- cvCalcBulk(data_object=palmo_obj, meanThreshold=1, cvThreshold=10,fileName="CVDbulk_10",gene_list=CVD_list)
 
 
 #####sc-RNA#####
 pbmc <- readRDS("data/AIFI-scRNA-PBMC-FinalData.RDS")
-#CVD_list <- fread('CVD-stable.list',data.table=F)
+CVD_list <- fread('CVD-stable.list',data.table=F)
 metaData <- pbmc@meta.data
 pbmc@meta.data$Sample <- pbmc@meta.data$orig.ident
 pbmc@meta.data$celltype <- gsub(" ", "_", pbmc@meta.data$celltype)
@@ -40,9 +39,7 @@ palmo_obj <- createPALMOobject(anndata=ann, data=pbmc)
 palmo_obj <- annotateMetadata(data_object=palmo_obj,sample_column= "Sample",donor_column= "PTID",time_column= "Time")
 palmo_obj <- mergePALMOdata(data_object=palmo_obj, datatype="singlecell")
 palmo_obj <- avgExpCalc(data_object=palmo_obj,assay="RNA", group_column="celltype")
-#palmo_obj <- cvCalcSCProfile(data_object=palmo_obj,housekeeping_genes=c("GAPDH", "ACTB"),fileName="CVDsc-10")
 palmo_obj <- cvCalcSCProfile(data_object=palmo_obj, meanThreshold = 0.1,fileName="CVDsc-10_all")
-#cvSCsampleprofile(data_object=palmo_obj, meanThreshold = 0.1,cvThreshold = 10)
 featureSet <- c("PTID", "Time","celltype")
 palmo_obj <- lmeVariance(data_object=palmo_obj,featureSet=featureSet,meanThreshold=0.1, cl=4,fileName="CVDsc-10_all")
 var_decomp <- palmo_obj@result$variance_decomposition
