@@ -36,7 +36,8 @@ then
 		--keep ${PRO_FOLDER}/${Pro}_IID.list \
 		--extract ${GENO_FOLDER}/w_hm3.snplist \
 		--mind 0.05 --maf 0.01 --hwe 1e-8 --make-bed \
-		--out ${GENO_FOLDER}/${Pro} --force-intersect
+        --force-intersect \
+		--out ${GENO_FOLDER}/${Pro} 
 fi
 
 #####Estimate the heritability of the protein using gcta
@@ -50,8 +51,8 @@ ${SOFTWARE_FOLDER}/gcta/bin/gcta64 \
 	--grm ${GENO_FOLDER}/${Pro}_grm \
 	--pheno ${PRO_FOLDER}/${Pro}_exp.txt \
 	--reml --reml-no-constrain \
-        --reml-lrt 1 --thread-num 20 \
-        --out ${GENO_FOLDER}/${Pro}_reml 
+    --reml-lrt 1 --thread-num 20 \
+    --out ${GENO_FOLDER}/${Pro}_reml 
 
 #####Build the model using FUSION pipeline
 Rscript ${SOFTWARE_FOLDER}/FUSION/FUSION.compute_weights.R \
