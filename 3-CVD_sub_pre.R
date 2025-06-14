@@ -9,6 +9,7 @@ library(doParallel)
 
 readRenviron("configure.env")
 diagnostic_model_FOLDER <- Sys.getenv("diagnostic_model_FOLDER")
+OUTPUT_FOLDER <- Sys.getenv("OUTPUT_FOLDER")
 
 olink_pro <- fread(file.path(diagnostic_model_FOLDER, "olink_protein.csv") , data.table = F)
 pro_anno <- fread(file.path(diagnostic_model_FOLDER,"coding143.tsv") , data.table = F)
@@ -49,3 +50,5 @@ for(i in 1:nrow(Sample))
 	svm.ROC <- roc(rea , predictor = pre_prob_svm$case , levels = levels(dat_test[,c("PHE")]) , direction = "<")
 	model_all[[i]] <- list(PHE=Sample$PHE[i], preProcess = glm.model$preProcess,bestTune = glm.model$bestTune,control = glm.model$control,method = glm.model$method,coefnames=glm.model$coefnames)
 }
+saveRDS(model_all, file = file.path(OUTPUT_FOLDER,"CVD_diagnostic_model.RDS"))
+
