@@ -33,7 +33,7 @@ model_all <- list()
 for(i in 1:nrow(Sample))
 {
 	PHE <- paste0(strsplit(Sample$PHE[i],split="_")[[1]][-length(strsplit(Sample$PHE[i],split="_")[[1]])],collapse="_")
-    file_name <- paste0(Sample$PHE[i],'.list')
+    	file_name <- paste0(Sample$PHE[i],'.list')
 	case_list <- fread(file.path(diagnostic_model_FOLDER,file_name),data.table=F,header=F)
 	dat_case <- olink_pro[which(olink_pro$IID%in%case_list$V1),]
 	dat_all <- rbind(dat_case,olink_pro_control)
