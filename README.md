@@ -3,6 +3,7 @@ This repository contains the primary codes used in the research article:
 “Blood plasma proteome-wide association study implicates novel proteins in the pathogenesis of multiple cardiovascular diseases.”
 The analyses were conducted using data from the UK Biobank (UKB) cohort and publicly available genome-wide association studies (GWAS) datasets. In addition, we provide a plasma protein genetic prediction model trained on the UKB Pharma Proteomics Project (UKB-PPP) data. This model enables further exploration and hypothesis-driven research into the molecular underpinnings of cardiovascular diseases.
 
+# Required Tools & Dependencies
 To reproduce the analyses in this project, the following tools and software are required:
 | Tool / Package        | Description                                                                                 | Installation                                                |
 | --------------------- | --------------------------------------------------------------------------------------------| ----------------------------------------------------------- |
@@ -11,3 +12,5 @@ To reproduce the analyses in this project, the following tools and software are 
 | LDSC                | Using LDSC to Convert GWAS Summary Statistics Format                                        | https://github.com/bulik/ldsc                               |
 | SMR                 | Implements SMR & HEIDI to assess pleiotropic associations using GWAS and pQTL summary data. | https://yanglab.westlake.edu.cn/software/smr/#Overview      |
 | gcta                | GCTA was used to estimate the heritability of plasma protein abundance based on individual-level genotype data. | https://yanglab.westlake.edu.cn/software/gcta/#Overview     |
+
+
