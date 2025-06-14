@@ -24,6 +24,8 @@ This repository includes the scripts and data files used in our PWAS analysis pi
 | 3-CVD_sub_pre.R           | Builds disease diagnostic models using proteins identified as putatively causal for CVDs.   |
 | 4-My_PALMO.R              | Evaluates the stability of CVD causal proteins across bulk plasma and scRNA using the PALMO package. |
 | 5-cellenrich.R            | Identifies cell type–specific expression patterns of candidate proteins or genes based on single-cell RNA-seq data. |
+| CVD_diagnostic_model.RDS  | Repository of all protein-based predictive models for disease diagnostic developed in this study. |
+| UKB_Olink.tar.gz          | The protein models (weights) derived from your FUSION analyses. |
 
 # Citations
 1. Gusev A, Ko A, Shi H, Bhatia G, Chung W, Penninx BW, et al. Integrative approaches for large-scale transcriptome-wide association studies. Nat Genet. 2016;48(3):245-52
