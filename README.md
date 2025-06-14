@@ -8,6 +8,6 @@ To reproduce the analyses in this project, the following tools and software are 
 | --------------------- | --------------------------------------------------------------------------------------------| ----------------------------------------------------------- |
 | [FUSION]              | A framework for transcriptome/proteome-wide association studies (TWAS/PWAS)                 | http://gusevlab.org/projects/fusion/                        |
 | [PLINK]               | PLINK is a free, open-source whole genome association analysis toolset                      | https://github.com/chrchang/plink-ng                        |
-| [LDSC]                | Formatting GWAS summary statistics                                                          | https://github.com/bulik/ldsc                               |
+| [LDSC]                | Using LDSC to Convert GWAS Summary Statistics Format                                        | https://github.com/bulik/ldsc                               |
 | [SMR]                 | Implements SMR & HEIDI to assess pleiotropic associations using GWAS and pQTL summary data. | https://yanglab.westlake.edu.cn/software/smr/#Overview      |
-| [gcta]                |                                                                                             | https://yanglab.westlake.edu.cn/software/gcta/#Overview     |
+| [gcta]                | GCTA was used to estimate the heritability of plasma protein abundance based on individual-level genotype data. | https://yanglab.westlake.edu.cn/software/gcta/#Overview     |
