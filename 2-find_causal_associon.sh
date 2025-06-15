@@ -34,6 +34,7 @@ Rscript SOFTWARE_FOLDER/FUSION/FUSION.post_process.R \
     --out OUTPUT_FOLDER/Conditional/${PHE}.${chr}.top.analysis
     
 #####SMR analysis#####
+###pQTL summary statistics must be pre-converted to BESD format using SMR.
 cut -f 2 OUTPUT_FOLDER/Conditional/${PHE}.${chr}.top.analysis.joint_included.dat > prob.list
 SOFTWARE_FOLDER/SMR/bin/smr-1.3.1 \
     -–bfile REF_FOLDER/1000G.EUR.${chr} \
