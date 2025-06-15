@@ -3,7 +3,7 @@
 
 library(data.table)
 
-readRenviron("configure.env")
+readRenviron("./configure.env")
 Stable_gene_FOLDER <- Sys.getenv("Stable_gene_FOLDER")
 OUTPUT_FOLDER <- Sys.getenv("OUTPUT_FOLDER")
 
