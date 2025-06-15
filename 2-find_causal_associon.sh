@@ -1,6 +1,6 @@
 ### This script uses directory paths defined in configure.env.
 ### Please ensure the configuration file is correctly set up before running.
-source configure.env
+source ./configure.env
 
 ##### Using LDSC to Convert GWAS Summary Statistics Format
 PHE = CVD               ###Phenotype
