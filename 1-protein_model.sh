@@ -1,6 +1,6 @@
 ### This script uses directory paths defined in configure.env.
 ### Please ensure the configuration file is correctly set up before running.
-source configure.env
+source ./configure.env
 
 ######Obtain the genotype data of the protein
 ID=PROTEIN
