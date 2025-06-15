@@ -7,7 +7,7 @@ library(pROC)
 library(data.table)
 library(doParallel)
 
-readRenviron("configure.env")
+readRenviron("./configure.env")
 diagnostic_model_FOLDER <- Sys.getenv("diagnostic_model_FOLDER")
 OUTPUT_FOLDER <- Sys.getenv("OUTPUT_FOLDER")
 
