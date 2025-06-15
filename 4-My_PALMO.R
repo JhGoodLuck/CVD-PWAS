@@ -12,7 +12,7 @@ library("ggrepel")
 library("pbapply")
 library("Seurat")
 
-readRenviron("configure.env")
+readRenviron("./configure.env")
 Stable_gene_FOLDER <- Sys.getenv("Stable_gene_FOLDER")
 CVD_list <- fread(file.path(diagnostic_model_FOLDER,'CVD_gene.list'),data.table=F)
 
