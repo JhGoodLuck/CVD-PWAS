@@ -4,7 +4,7 @@ source ./configure.env
 
 ######Obtain the genotype data of the protein
 ID=PROTEIN
-Pro=`awk -v ID=${ID} '$1==Pro{print $2}'  ${PRO_FOLDER}/coding143.tsv |cut -f2 |cut -f1 -d ';'`
+Pro=`awk -v ID=${ID} '$1==ID{print $2}'  ${PRO_FOLDER}/coding143.tsv |cut -f2 |cut -f1 -d ';'`
 mkdir -p ${PRO_FOLDER}/${Pro}
 
 echo -e "FID\tIID\tEXP" >  ${PRO_FOLDER}/${Pro}_exp.txt
