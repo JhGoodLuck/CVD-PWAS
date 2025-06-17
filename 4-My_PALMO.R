@@ -1,5 +1,6 @@
 ### This script uses directory paths defined in configure.env.
 ### Please ensure the configuration file is correctly set up before running.
+### The data used in this file were downloaded from the original publication.
 
 library("PALMO")
 library("Hmisc")
